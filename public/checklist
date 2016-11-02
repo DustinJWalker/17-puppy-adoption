@@ -18,10 +18,10 @@
     * [ x] Within `.nav` select `a.nav-item` and make the color set to the `white-bis` color
     * [ x] Make an `is-brand` class selector with `font-size: 1.2rem` and `font-weight: normal` to use for the left side "Puppies" in the navbar
     * [ ] **Checkpoint:** Setup Vue Router
-      - [ ] Use the `vrouter` snippet to setup the Vue router in `index.js`
-      - [ ] Create a `routes` directory in your `app` directory
-      - [ ] Create a `application.vue` component in the `routes` directory and use the `template` snippet to fill it with the starting skeleton for a component
-      - [ ] Create a `application.vue` component in the `routes` directory and use the `template` snippet to fill it with the starting skeleton for a component
+      - [ x] Use the `vrouter` snippet to setup the Vue router in `index.js`
+      - [x ] Create a `routes` directory in your `app` directory
+      - [ x] Create a `application.vue` component in the `routes` directory and use the `template` snippet to fill it with the starting skeleton for a component
+      - [x ] Create a `application.vue` component in the `routes` directory and use the `template` snippet to fill it with the starting skeleton for a component
     * [ ] **Checkpoint:** Static HTML Application Component
       - [ ] Using the Bulma documentation as a guide, recreate the application "wrapping" component with:
         * [ ] Navbar
