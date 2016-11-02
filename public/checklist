@@ -8,15 +8,15 @@
   - [ x] Uncomment the `app.use` code in `server/index.js` to support client-side routing for the dev server
   - [x ] Uncomment the plugins in `.eslintrc.js` to support linting for `.vue` files
 * [ ] **Checkpoint:** Add styling with Bulma
-  - [ ] Use `yarn` to install `bulma`
-  - [ ] In `app.scss`
-    * [ ] Add a `blue` variable set to `hsl(217, 71%,  53%)`
-    * [ ] Add a `primary` variable set to the `blue` variable
-    * [ ] Uncomment the `fa-font-path`
-    * [ ] Import `bulma/bulma` before the font-awesome import
-    * [ ] Make `.nav` have a background using the `primary` variable
-    * [ ] Within `.nav` select `a.nav-item` and make the color set to the `white-bis` color
-    * [ ] Make an `is-brand` class selector with `font-size: 1.2rem` and `font-weight: normal` to use for the left side "Puppies" in the navbar
+  - [x ] Use `yarn` to install `bulma`
+  - [x ] In `app.scss`
+    * [ x] Add a `blue` variable set to `hsl(217, 71%,  53%)`
+    * [x ] Add a `primary` variable set to the `blue` variable
+    * [x ] Uncomment the `fa-font-path`
+    * [ x] Import `bulma/bulma` before the font-awesome import
+    * [x ] Make `.nav` have a background using the `primary` variable
+    * [ x] Within `.nav` select `a.nav-item` and make the color set to the `white-bis` color
+    * [ x] Make an `is-brand` class selector with `font-size: 1.2rem` and `font-weight: normal` to use for the left side "Puppies" in the navbar
     * [ ] **Checkpoint:** Setup Vue Router
       - [ ] Use the `vrouter` snippet to setup the Vue router in `index.js`
       - [ ] Create a `routes` directory in your `app` directory
