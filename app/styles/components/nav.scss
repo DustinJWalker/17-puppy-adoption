@@ -1,7 +1,9 @@
-.nav {
-  background: $c-primary;
+  .nav {
+    background: $c-primary;
+    color: $c-white;
 
-  &__container {
-    max-width: 65rem;
+
+  .is-brand {
+    font-size: 1.2rem;
+    font-weight: normal;
   }
-}
