@@ -121,7 +121,35 @@
           <p class="control">
             <input type="input" type="text">
           </p>
-
+          <label class="label">Sex</label>
+          <p class="control">
+            <span class="select">
+              <select>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </span>
+            </p>
+            <label for="label">Color</label>
+              <p class="control">
+                <input class="input" type="text">
+              </p>
+              <label for="label">Breed</label>
+                <p class="control">
+                  <input class="input" type="text">
+                </p>
+                <label for="label">Image Url</label>
+                  <p class="control">
+                    <input class="input" type="text">
+                  </p>
+                  <label class="label">Description</label>
+                    <p class="control">
+                      <textarea class="textarea" placeholder="Textarea"></textarea>
+                    </p>
+                    <p class="control">
+                      <button class="button is-outlined">Back</button>
+                      <button class="button is-primary">Submit</button>
+                    </p>
 
       </form>
     </div>
