@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="">
 
+
     <nav class="nav">
       <div class="nav__left">
-         <!-- <a class="nav-item is-brand" href="#"> -->
         <router-link to="/" class="nav-item is-brand">Puppies</router-link>
       </div>
       <div class="nav__right">
@@ -125,15 +125,53 @@
                   <td>Zombie Kid</td>
                   <td>10</td>
                   <td>
-                    <a href="">Read More</a>
+                    <a href="" class="is-active">Read More</a>
                   </td>
                 </tr>
-                <h1>Adopted Puppers</h1>
+                <h1 class="title">Adopted Puppers</h1>
                 <tr>
                   <th>Name</th>
                   <th>Age</th>
                   <th></th>
                 </tr>
+                <tr>
+                  <td>Luna</td>
+                  <td>2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mojo Jojo</td>
+                  <td>2</td>
+                  <td>
+                    <a href="" class="is-active">Read More</a>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                <td>Foobar</td>
+                <td>18 months</td>
+                <td>
+                  <a href="" class="is-active">Read More</a>
+                </td>
+                <td></td>
+                </tr>
+                <tr>
+                  <td>Marvin</td>
+                  <td>3 years</td>
+                  <td>
+                    <a href="" class="is-active">Read More</a>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ralph</td>
+                  <td>4 months</td>
+                  <td>
+                    <a href="" class="is-active">Read More</a>
+                  </td>
+                  <td></td>
+                </tr>
+
 
 
               </tbody>
