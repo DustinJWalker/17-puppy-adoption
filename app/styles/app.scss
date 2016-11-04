@@ -15,8 +15,27 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 
 .nav {
   background: $c-primary;
+}
 
-  .nav-items a, a.nav-items {
-    color: $c-white;
+a {
+  color: $c-white;
+}
+
+.nav-itemis-brand {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.is-square  {
+  img {
+    object-fit: contain;
   }
+}
+
+.is-active  {
+  color: $c-primary;
+}
+
+.router-link  {
+  color: $c-primary;
 }
