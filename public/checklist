@@ -17,54 +17,101 @@
     * [x ] Make `.nav` have a background using the `primary` variable
     * [ x] Within `.nav` select `a.nav-item` and make the color set to the `white-bis` color
     * [ x] Make an `is-brand` class selector with `font-size: 1.2rem` and `font-weight: normal` to use for the left side "Puppies" in the navbar
-    * [ ] **Checkpoint:** Setup Vue Router
+    * [ x] **Checkpoint:** Setup Vue Router
       - [ x] Use the `vrouter` snippet to setup the Vue router in `index.js`
       - [x ] Create a `routes` directory in your `app` directory
       - [ x] Create a `application.vue` component in the `routes` directory and use the `template` snippet to fill it with the starting skeleton for a component
       - [x ] Create a `application.vue` component in the `routes` directory and use the `template` snippet to fill it with the starting skeleton for a component
     * [ ] **Checkpoint:** Static HTML Application Component
-      - [ ] Using the Bulma documentation as a guide, recreate the application "wrapping" component with:
-        * [ ] Navbar
-          - [ ] "Puppies" (`.is-brand`) should link to the `index` route
-          - [ ] "All Puppies" should link to the `index` route
-          - [ ] "Add Puppy" should link to the `new` route
-        * [ ] Sidebar
-          - [ ] List of puppies (don't worry about `v-for` yet...)
-            - [ ] Puppy image
-            - [ ] Puppy name
-            - [ ] "read more" link to the `detail` route passing the parameter for the `id` of the current puppy
+      - [x ] Using the Bulma documentation as a guide, recreate the application "wrapping" component with:
+        * [ x] Navbar
+          - [x ] "Puppies" (`.is-brand`) should link to the `index` route
+          - [x ] "All Puppies" should link to the `index` route
+          - [x ] "Add Puppy" should link to the `new` route
+        * [ x] Sidebar
+          - [x ] List of puppies (don't worry about `v-for` yet...)
+            - [x ] Puppy image
+            - [x ] Puppy name
+            - [ x] "read more" link to the `detail` route passing the parameter for the `id` of the current puppy
         * [ ] Main/Outlet Area
           - [ ] `router-view`
-            * [ ] Pass down `puppies` value
-            * [ ] Pass down `apiUrl` value
+            * [x ] Pass down `puppies` value
+            * [ x] Pass down `apiUrl` value
             * [ ] Listen for `add` and trigger `addPuppy`
             * [ ] Listen for `remove` and trigger `removePuppy`
             * [ ] Listen for `update` and trigger `updatePuppy`
             * [ ] **Checkpoint:** Setup Application Data and Startup
-  - [ ] Add a variable called `apiUrl` and set it to: `https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan` (you'll change `ryan` later)
+  - [x ] Add a variable called `apiUrl` and set it to: `https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan` (you'll change `ryan` later)
   - [ ] Setup `data` properties:
-    * [ ] `puppies` set to a blank array
-    * [ ] `apiUrl` set to `apiUrl`
-  - [ ] Add a `getData` function within `methods`
-    - [ ] Fetch to `apiUrl`, parse the json, then set `puppies` based on the results from the API
-  - [ ] Add blank functions to `methods`
-    * [ ] `addPuppy`
-    * [ ] `removePuppy`
-    * [ ] `updatePuppy`
+    * [ x] `puppies` set to a blank array
+    * [x ] `apiUrl` set to `apiUrl`
+  - [ x] Add a `getData` function within `methods`
+    - [x ] Fetch to `apiUrl`, parse the json, then set `puppies` based on the results from the API
+  - [x ] Add blank functions to `methods`
+    * [x ] `addPuppy`
+    * [ x] `removePuppy`
+    * [ x] `updatePuppy`
 * [ ] **Checkpoint:** Update the application template to show sidebar with real data
-  - [ ] Update sidebar to loop through puppies
-  - [ ] Show individual puppy within the loop
-    * [ ] Puppy image
-    * [ ] Puppy name
-    * [ ] Update `router-link` to link pass in the `puppy.id` as the `id` url parameter
+  - [ x] Update sidebar to loop through puppies
+  - [x ] Show individual puppy within the loop
+    * [x ] Puppy image
+    * [x ] Puppy name
+    * [x ] Update `router-link` to link pass in the `puppy.id` as the `id` url parameter
 * [ ] **Checkpoint:** Create the index template
   - [ ] Add `puppies` as an item in `props` for the component
   - [ ] Add a `router-link` to `new` so that you can go to the new form
   - [ ] Make a table head with:
-    * [ ] Name
-    * [ ] Age
-    * [ ] Empty head
-  - [ ] Make a repeating table row for each puppy in the `puppies` array and show:
-    * [ ] Puppy Name
-    * [ ] Puppy Age
-    * [ ] A `router-link` to the `detail` route and pass the pass in the current puppy's `id` as the `id` url parameter
+    * [ x] Name
+    * [ x] Age
+    * [x ] Empty head
+  - [ x] Make a repeating table row for each puppy in the `puppies` array and show:
+    * [x ] Puppy Name
+    * [x ] Puppy Age
+    * [ x] A `router-link` to the `detail` route and pass the pass in the current puppy's `id` as the `id` url parameter
+    [ ] **Checkpoint:** Create the `new` template
+     - [ x] Create a `new.vue` component in the `routes` directory
+     - [ x] Add `formValues` to your data object
+     - [x ] Register the `new` route with the Vue router in `index.js`
+     - [ x] Create a form to take inputs for (binding `v-model` to properties on `formValues`)
+       * [ x] Name (`name` on the server)
+       * [ x] Age (`age` on the server)
+       * [ x] Sex (Ideally a `select` with options for "male" and "female") (`sex` on the server)
+       * [ x] Color (`color` on the server)
+       * [ x] Breed (`breed` on the server)
+       * [x ] Image Url (`image_url` on the server)
+       * [ x] Description (Use a `textarea`) (`description` on the server)
+   * [ ] **Checkpoint:** Submit Puppies from the `new` route
+     - [ ] Add a `submit` event to the form on the `new` route (don't forget to prevent default)
+     - [ ] When submitted, in your handler "emit" the `add` event and pass in the `formValues`
+     - [ ] In the `application.vue` change `apiUrl` so that `ryan` is changed to your name
+     - [ ] To the `application.vue` implement `addPuppy` so that it:
+       * [ ] Makes a post request to the `apiUrl` with data from your emitted event
+       * [ ] After the post request finishes, parse the response as json
+       * [ ] After parsing the response, add the new puppy to the array of `puppies`
+       * [ ] Then redirect to the `index` route
+       [ ] **Checkpoint:** Create the `detail` template
+   - [ ] Create a `detail.vue` component in the `routes` directory
+   - [ ] Add `puppy` to your data object
+   - [ ] Add `id` to your data object and set it to the `id` parameter from your current route
+   - [ ] Add `props` and include the `apiUrl`
+   - [ ] Register the `detail` route with the Vue router in `index.js` with a dynamic route segment called `id`
+   - [ ] Add a `getData` function in the `methods` object
+     * [ ] Makes a get request to the `<apiUrl>/<id>`
+     * [ ] Then parse the response json
+     * [ ] Then set the `puppy` on the current component
+     * [ ] Make a template filling in date from the current `puppy` value
+ * [ ] **Checkpoint:** Allow Users to Adopt Puppies
+   - [ ] Create a button next to the puppy name that says "Adopt Me"
+   - [ ] Add a click event on the button
+   - [ ] When the button is clicked emit an event called `update` and two more arguments: the `id` of the current puppy and an object with `{ adopted: true }` so that it represents you are trying to update the puppy with a given `id` and the only properties you want to update are `adopted` set to `true`
+   - [ ] In `application.vue` add two arguments to `updatePuppy`: `id` and `updates`
+   - [ ] In `updatePuppy`:
+     * [ ] Make a `put` request to `<apiUrl>/<id>`
+       - [ ] Send the stringified `updates` as the request body
+       - [ ] When complete, parse the response as json
+       - [ ] When parsing is complete, map through all of the `puppies`
+         * [ ] if the puppy from the array has the same `id` as the `id` of the puppy from the server return the server puppy
+         * [ ] else return the puppy from the array
+ * [ ] **Checkpoint:** Toggle which button shows on adopted pups
+   * [ ] In the `detail` route make an if statement that shows the "I'm Adopted" button for adopted puppers and "Adopt Me" for ones that aren't
+ Bonus Stage
