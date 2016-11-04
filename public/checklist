@@ -81,34 +81,34 @@
        * [x ] Image Url (`image_url` on the server)
        * [ x] Description (Use a `textarea`) (`description` on the server)
    * [ ] **Checkpoint:** Submit Puppies from the `new` route
-     - [ ] Add a `submit` event to the form on the `new` route (don't forget to prevent default)
-     - [ ] When submitted, in your handler "emit" the `add` event and pass in the `formValues`
-     - [ ] In the `application.vue` change `apiUrl` so that `ryan` is changed to your name
-     - [ ] To the `application.vue` implement `addPuppy` so that it:
-       * [ ] Makes a post request to the `apiUrl` with data from your emitted event
-       * [ ] After the post request finishes, parse the response as json
-       * [ ] After parsing the response, add the new puppy to the array of `puppies`
-       * [ ] Then redirect to the `index` route
-       [ ] **Checkpoint:** Create the `detail` template
-   - [ ] Create a `detail.vue` component in the `routes` directory
-   - [ ] Add `puppy` to your data object
-   - [ ] Add `id` to your data object and set it to the `id` parameter from your current route
-   - [ ] Add `props` and include the `apiUrl`
-   - [ ] Register the `detail` route with the Vue router in `index.js` with a dynamic route segment called `id`
-   - [ ] Add a `getData` function in the `methods` object
-     * [ ] Makes a get request to the `<apiUrl>/<id>`
-     * [ ] Then parse the response json
-     * [ ] Then set the `puppy` on the current component
-     * [ ] Make a template filling in date from the current `puppy` value
+     - [ x] Add a `submit` event to the form on the `new` route (don't forget to prevent default)
+     - [ x] When submitted, in your handler "emit" the `add` event and pass in the `formValues`
+     - [ x] In the `application.vue` change `apiUrl` so that `ryan` is changed to your name
+     - [ x] To the `application.vue` implement `addPuppy` so that it:
+       * [x ] Makes a post request to the `apiUrl` with data from your emitted event
+       * [ x] After the post request finishes, parse the response as json
+       * [ x] After parsing the response, add the new puppy to the array of `puppies`
+       * [ x] Then redirect to the `index` route
+       [ x] **Checkpoint:** Create the `detail` template
+   - [ x] Create a `detail.vue` component in the `routes` directory
+   - [ x] Add `puppy` to your data object
+   - [ x] Add `id` to your data object and set it to the `id` parameter from your current route
+   - [ x] Add `props` and include the `apiUrl`
+   - [ x] Register the `detail` route with the Vue router in `index.js` with a dynamic route segment called `id`
+   - [x ] Add a `getData` function in the `methods` object
+     * [ x] Makes a get request to the `<apiUrl>/<id>`
+     * [ x] Then parse the response json
+     * [ x] Then set the `puppy` on the current component
+     * [ ] Make a template filling in data from the current `puppy` value
  * [ ] **Checkpoint:** Allow Users to Adopt Puppies
-   - [ ] Create a button next to the puppy name that says "Adopt Me"
-   - [ ] Add a click event on the button
+   - [x ] Create a button next to the puppy name that says "Adopt Me"
+   - [x ] Add a click event on the button
    - [ ] When the button is clicked emit an event called `update` and two more arguments: the `id` of the current puppy and an object with `{ adopted: true }` so that it represents you are trying to update the puppy with a given `id` and the only properties you want to update are `adopted` set to `true`
    - [ ] In `application.vue` add two arguments to `updatePuppy`: `id` and `updates`
    - [ ] In `updatePuppy`:
      * [ ] Make a `put` request to `<apiUrl>/<id>`
-       - [ ] Send the stringified `updates` as the request body
-       - [ ] When complete, parse the response as json
+       - [ x] Send the stringified `updates` as the request body
+       - [ x] When complete, parse the response as json
        - [ ] When parsing is complete, map through all of the `puppies`
          * [ ] if the puppy from the array has the same `id` as the `id` of the puppy from the server return the server puppy
          * [ ] else return the puppy from the array
