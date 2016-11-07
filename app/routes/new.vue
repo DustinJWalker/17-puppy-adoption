@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    <h1>Found a Pupper?  We can help!</h1>
+    <h1 class="title">Found a Pupper?  We can help!</h1>
     <form @submit.prevent="saveForm">
       <label for="puppy-name">Name</label>
       <p class="control">
