@@ -6,10 +6,15 @@
       <div class="column is-half">
 
       <div class="level">
-        <div class="level-item">
-          <h2 class="title">{{ puppy.name }}</h2>
+        <div class="level-left">
+            <div class="level-item">
+              <p class="title">{{ puppy.name }}</p>
+            </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item"
           <template v-if="puppy.adopted">
-            <button class="button" @click="removePuppy">
+            <button class="button is-success" @click="removePuppy">
               <i class="fa fa-paw"></i>
               I'm Adopted
             </button>
@@ -23,16 +28,22 @@
         </div>
       </div>
         <div class="columns">
-          <div class="is-columns is-offset">
-            <div class="card">
-              <div class="card-image">
-                <figure class="is-square">
-                  <img :src="puppy.image_url" alt="">
-                </figure>
+          <div class="column is-offset">
+            <div class="level">
+              <div class="level-items">
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="is-square">
+                      <img :src="puppy.image_url" alt="">
+                    </figure>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
-        </div>
+      <div class="column is-offset-1">
+
         <div class="level-item has-text-centered">
           <p class="heading">Age</p>
           <p class="title">{{ puppy.age }}</p>
@@ -50,6 +61,7 @@
           <p class="title">{{ puppy.sex }}</p>
         </div>
       </div>
+    </div>
 
       <div class="content">
         <h1 class="title">About Me</h1>
@@ -57,6 +69,7 @@
       </div>
     </div>
 
+  </div>
     </div>
   </template>
   <script>
