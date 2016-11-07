@@ -3,208 +3,62 @@
 
 
     <nav class="nav">
-      <div class="nav__left">
-        <router-link to="/" class="nav-item is-brand">Puppies</router-link>
+      <div class="nav-left">
+        <router-link to="{ name: 'index' }" class="nav-item is-brand">Puppies</router-link>
       </div>
-      <div class="nav__right">
-        <router-link to="/" class="nav-item is-brand">All Puppies</router-link>
-        <router-link to="/new" class="nav-item is-brand">Add Puppy</router-link>
+      <div class="nav-right">
+        <router-link to="{ name: 'index' }" class="nav-item is-brand">All Puppies</router-link>
+        <router-link to="{ name: 'new' }" class="nav-item is-brand">Add Puppy</router-link>
       </div>
     </nav>
 
   <div class="section">
-    <div class="container ">
+    <div class="container">
       <div class="columns">
         <div class="column is-4">
-          <nav class="panel">
+          <div class="panel">
             <p class="panel-heading">
               Adopt a Pupper
             </p>
-            <div class="panel-block">
+            <div class="panel-block is-active" v-for="puppy in puppies">
               <div class="media">
                 <div class="media-left">
                   <p class="image is-64x64">
-                    <img src="http://placehold.it/128x128" alt="" />
+                    <img :src="puppy.image_url" alt="" />
                   </p>
                 </div>
 
                 <div class="media-right">
-                  <h2>Pupper Name</h2>
-                   <a class="is-active" href="#">Read more</a>
+                  <h2 class="subtitle">{{ puppy.name }}</h2>
+                   <router-link class="router-link" :to="{ name: 'detail', params: {id:puppy.id} }">
+                     Read More
+                   </router-link>
                 </div>
               </div>
             </div>
-
-            <div class="panel-block">
-              <div class="media">
-                <div class="media-left">
-                  <p class="image is-64x64">
-                    <img src="http://placehold.it/128x128" alt="" />
-                  </p>
-                </div>
-
-                <div class="media-right">
-                  <h2>Pupper Name</h2>
-                   <a class="is-active" href="#">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel-block">
-              <div class="media">
-                <div class="media-left">
-                  <p class="image is-64x64">
-                    <img src="http://placehold.it/128x128" alt="" />
-                  </p>
-                </div>
-
-                <div class="media-right">
-                  <h2>Pupper Name</h2>
-                   <a class="is-active" href="#">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel-block">
-              <div class="media">
-                <div class="media-left">
-                  <p class="image is-64x64">
-                    <img src="http://placehold.it/128x128" alt="" />
-                  </p>
-                </div>
-
-                <div class="media-right">
-                  <h2>Pupper Name</h2>
-                   <a class="is-active" href="#">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel-block">
-              <div class="media">
-                <div class="media-left">
-                  <p class="image is-64x64">
-                    <img src="http://placehold.it/128x128" alt="" />
-                  </p>
-                </div>
-
-                <div class="media-right">
-                  <h2>Pupper Name</h2>
-                   <a class="is-active" href="#">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel-block">
-              <div class="media">
-                <div class="media-left">
-                  <p class="image is-64x64">
-                    <img src="http://placehold.it/128x128" alt="" />
-                  </p>
-                </div>
-
-                <div class="media-right">
-                  <h2>Pupper Name</h2>
-                   <a class="is-active" href="#">Read more</a>
-                </div>
-              </div>
-            </div>
-          </nav>
+          </div>
         </div>
-
-        <div class="columns is-full width">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th></th>
-              </tr>
-              <tbody>
-                <tr>
-                  <td>Zombie Kid</td>
-                  <td>10</td>
-                  <td>
-                    <a href="" class="is-active">Read More</a>
-                  </td>
-                </tr>
-                <h1 class="title">Adopted Puppers</h1>
-                <tr>
-                  <th>Name</th>
-                  <th>Age</th>
-                  <th></th>
-                </tr>
-                <tr>
-                  <td>Luna</td>
-                  <td>2</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Mojo Jojo</td>
-                  <td>2</td>
-                  <td>
-                    <a href="" class="is-active">Read More</a>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                <td>Foobar</td>
-                <td>18 months</td>
-                <td>
-                  <a href="" class="is-active">Read More</a>
-                </td>
-                <td></td>
-                </tr>
-                <tr>
-                  <td>Marvin</td>
-                  <td>3 years</td>
-                  <td>
-                    <a href="" class="is-active">Read More</a>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Ralph</td>
-                  <td>4 months</td>
-                  <td>
-                    <a href="" class="is-active">Read More</a>
-                  </td>
-                  <td></td>
-                </tr>
-
-
-
-              </tbody>
-            </thead>
-
-          </table>
-        </div>
+        <div class="column">
+          <div class="is-relative">
+            <transition name="fade">
+              <router-view
+              :puppies="puppies"
+              :api-url="apiUrl"
+              @addPuppy="addPuppy"
+              @removePuppy="removePuppy"
+              @updatePuppy="updatePuppy">
+            </router-view>
+          </transition>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
+</div>
 </template>
-
 <script>
-const apiUrl =  'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
+
+import IndexPage from './index.vue'
+
+const apiUrl =  'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/Dustin';
 export default {
   data() {
     return {
@@ -214,12 +68,51 @@ export default {
     };
   },
 
+  mounted() {
+    this.getData();
+  },
+
   methods: {
     getData() {
       fetch(apiUrl)
       .then((r) => r.json())
       .then((puppies) => {
         this.puppies = puppies;
+      });
+    },
+    addPuppy(input) {
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(input),
+      })
+
+      .then((r) => r.json())
+      .then((puppies)=> {
+        this.puppies = [puppies,...this.puppies];
+        this.$router.push({ name: 'index'});
+      });
+    },
+    removePuppy(puppies) {
+      fetch(`${apiUrl}/${puppies.id}`, {
+        method: 'DELETE',
+      })
+
+
+      .then(() => {
+        this.puppies = this.puppies.filter((old) => old.id !== lunchSpot.id);
+        this.$router.push({ name: 'index' });
+      });
+    },
+    updatePuppy(id, formValues) {
+      fetch(`${apiUrl}/${id}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(input),
+      })
+      .then((r) => r.json())
+      .then((puppies) => {
+        this.puppies = [puppies,...this.puppies];
       });
     },
 

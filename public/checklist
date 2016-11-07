@@ -104,12 +104,12 @@
    - [x ] Create a button next to the puppy name that says "Adopt Me"
    - [x ] Add a click event on the button
    - [ ] When the button is clicked emit an event called `update` and two more arguments: the `id` of the current puppy and an object with `{ adopted: true }` so that it represents you are trying to update the puppy with a given `id` and the only properties you want to update are `adopted` set to `true`
-   - [ ] In `application.vue` add two arguments to `updatePuppy`: `id` and `updates`
+   - [x ] In `application.vue` add two arguments to `updatePuppy`: `id` and `updates`
    - [ ] In `updatePuppy`:
-     * [ ] Make a `put` request to `<apiUrl>/<id>`
+     * [ x] Make a `put` request to `<apiUrl>/<id>`
        - [ x] Send the stringified `updates` as the request body
        - [ x] When complete, parse the response as json
-       - [ ] When parsing is complete, map through all of the `puppies`
+       - [ x] When parsing is complete, map through all of the `puppies`
          * [ ] if the puppy from the array has the same `id` as the `id` of the puppy from the server return the server puppy
          * [ ] else return the puppy from the array
  * [ ] **Checkpoint:** Toggle which button shows on adopted pups

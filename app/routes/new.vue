@@ -2,42 +2,42 @@
   <div class="">
     <h1>Found a Pupper?  We can help!</h1>
     <form @submit.prevent="saveForm">
-      <label for="label">Name</label>
+      <label for="puppy-name">Name</label>
       <p class="control">
-        <input class="input" type="text">
+        <input id="puppy-name" class="input" type="text" v-model="formValues.name">
       </p>
-      <label for="label">Age</label>
+      <label for="puppy-age">Age</label>
       <p class="control">
-        <input class="input" type="text">
+        <input id="puppy-age" class="input" type="text" v-model="formValues.age">
       </p>
-      <label class="label">Sex</label>
+      <label for="puppy-sex">Sex</label>
       <p class="control">
         <span class="select">
-            <select>
+            <select v-model="formValues.sex">
               <option>Male</option>
               <option>Female</option>
             </select>
           </span>
       </p>
-      <label for="label">Color</label>
+      <label for="puppy-color">Color</label>
       <p class="control">
-        <input class="input" type="text">
+        <input id="puppy-color" class="input" type="text">
       </p>
-      <label for="label">Breed</label>
+      <label for="puppy-breed">Breed</label>
       <p class="control">
-        <input class="input" type="text">
+        <input id="puppy-breed" class="input" type="text">
       </p>
-      <label for="label">Image Url</label>
+      <label for="puppy-image">Image Url</label>
       <p class="control">
-        <input class="input" type="text">
+        <input id="puppy-image" class="input" type="text">
       </p>
-      <label class="label">Description</label>
+      <label class="puppy-description">Description</label>
       <p class="control">
-        <textarea class="textarea" placeholder="Textarea"></textarea>
+        <textarea v-model="formValues.description" class="textarea" placeholder="Textarea"></textarea>
       </p>
       <p class="control">
-        <button class="button is-outlined">Back</button>
-        <button class="button is-primary">Submit</button>
+        <router-link :to="{ name: 'index' }" class="button is-primary is-outlined">Cancel</router-link>
+        <button class="button is-info">Submit</button>
       </p>
     </form>
   </div>

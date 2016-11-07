@@ -1,8 +1,9 @@
 // @import 'yoga-sass/assets/yoga';
 // @import 'normalize-css/normalize';
 //
-$c-primary: hsl(217, 71%, 53%);
-$c-white: #eee;
+$blue: hsl(217, 71%, 53%);
+$primary: $blue;
+$secondary: #eee;
 @import 'bulma/bulma';
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
@@ -14,16 +15,16 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 }
 
 .nav {
-  background: $c-primary;
+  background: $primary;
+  &-item, .is-brand {
+    color: $secondary;
+  }
 }
 
-a {
-  color: $c-white;
-}
-
-.nav-itemis-brand {
+.is-brand {
   font-size: 1.2rem;
   font-weight: normal;
+
 }
 
 .is-square  {
@@ -33,9 +34,9 @@ a {
 }
 
 .is-active  {
-  color: $c-primary;
+  color: $primary;
 }
 
 .router-link  {
-  color: $c-primary;
+  color: $primary;
 }

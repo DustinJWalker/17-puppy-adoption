@@ -18,7 +18,7 @@
             </tr>
         </thead>
             <tbody>
-            <tr v-if="!puppy.adopted" v-for="puppy in puppies">
+            <tr v-if="puppy.adopted" v-for="puppy in puppies">
               <td>{{ puppy.name }}</td>
               <td>{{ pupy.age }}</td>
               <td></td>
