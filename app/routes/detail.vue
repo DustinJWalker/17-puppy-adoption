@@ -41,9 +41,7 @@
 
               </div>
             </div>
-          </div>
-      <div class="column is-offset-1">
-
+      <div class="level">
         <div class="level-item has-text-centered">
           <p class="heading">Age</p>
           <p class="title">{{ puppy.age }}</p>
@@ -61,6 +59,10 @@
           <p class="title">{{ puppy.sex }}</p>
         </div>
       </div>
+    </div>
+
+
+
     </div>
 
       <div class="content">
