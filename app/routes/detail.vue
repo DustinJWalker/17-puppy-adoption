@@ -2,17 +2,12 @@
   <div class="">
 
   <div class="section">
-    <div class="columns">
-      <div class="column is-half">
 
       <div class="level">
-        <div class="level-left">
             <div class="level-item">
-              <p class="title">{{ puppy.name }}</p>
+              <p class="title has-text-right">{{ puppy.name }}</p>
             </div>
-        </div>
-        <div class="level-right">
-          <div class="level-item"
+            <div class="level-item">
           <template v-if="puppy.adopted">
             <button class="button is-success" @click="removePuppy">
               <i class="fa fa-paw"></i>
@@ -26,12 +21,12 @@
             </button>
           </template>
         </div>
-      </div>
+        </div>
         <div class="columns">
-          <div class="column is-offset">
+          <div class="column is-half is-offset-3">
             <div class="level">
               <div class="level-items">
-                <div class="card">
+                <div class="card is-fullwidth">
                   <div class="card-image">
                     <figure class="is-square">
                       <img :src="puppy.image_url" alt="">
@@ -71,7 +66,7 @@
       </div>
     </div>
 
-  </div>
+
     </div>
   </template>
   <script>
