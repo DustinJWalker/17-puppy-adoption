@@ -63,7 +63,7 @@ export default {
 
   methods: {
     saveForm() {
-      this.$emit('addPuppies', this.formValues);
+      this.$emit('addPuppy', this.formValues);
 
     },
   },

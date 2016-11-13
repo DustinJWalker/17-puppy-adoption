@@ -4,11 +4,11 @@
 
     <nav class="nav">
       <div class="nav-left">
-        <router-link to="{ name: 'index' }" class="nav-item is-brand">Puppies</router-link>
+        <router-link :to="{ name: 'index' }" class="nav-item is-brand">Puppies</router-link>
       </div>
       <div class="nav-right">
-        <router-link to="{ name: 'index' }" class="nav-item is-brand">All Puppies</router-link>
-        <router-link to="{ name: 'new' }" class="nav-item is-brand">Add Puppy</router-link>
+        <router-link :to="{ name: 'index' }" class="nav-item is-brand">All Puppies</router-link>
+        <router-link :to="{ name: 'new' }" class="nav-item is-brand">Add Puppy</router-link>
       </div>
     </nav>
 
@@ -24,7 +24,7 @@
               <div class="media">
                 <div class="media-left">
                   <p class="image is-64x64">
-                    <img :src="puppy.image_url" alt="" />
+                    <img :src="puppy.image_url" alt=""/>
                   </p>
                 </div>
 
@@ -58,8 +58,11 @@
 
 import IndexPage from './index.vue'
 
-const apiUrl =  'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/Dustin';
+const apiUrl =  'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
 export default {
+  components: {
+    IndexPage,
+  },
   data() {
     return {
       apiUrl,
@@ -100,7 +103,7 @@ export default {
 
 
       .then(() => {
-        this.puppies = this.puppies.filter((old) => old.id !== lunchSpot.id);
+        this.puppies = this.puppies.filter((old) => old.id !== puppy.id);
         this.$router.push({ name: 'index' });
       });
     },

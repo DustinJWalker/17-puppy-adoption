@@ -8,7 +8,8 @@
               <p class="title has-text-right">{{ puppy.name }}</p>
             </div>
             <div class="level-item">
-          <template v-if="puppy.adopted">
+          <template v-if="!puppy.adopted">
+            <button class="button is-danger" @click="removePuppy">Remove Puppy</button>
             <button class="button is-success" @click="removePuppy">
               <i class="fa fa-paw"></i>
               I'm Adopted
@@ -84,6 +85,11 @@
     mounted() {
       this.loadData();
     },
+
+    watch: {
+      '$route': 'loadData',
+      'puppies': 'loadData',
+    }
 
     methods: {
       loadData() {
