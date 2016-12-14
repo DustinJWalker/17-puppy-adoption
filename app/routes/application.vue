@@ -62,7 +62,7 @@ import IndexPage from './index.vue'
 const apiUrl =  'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
 export default {
   components: {
-    Index,
+    IndexPage,
   },
   data() {
     return {

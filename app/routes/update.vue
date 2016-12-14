@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    <h1 class-"title">Update Puppy Info</h1>
+    <h1 class="title">Update Puppy Info</h1>
     <form @submit.prevent="savePuppy">
       <label for="puppy-name"><strong>Name</strong></label>
       <p class="control">

@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <h1 class="title">Found a Pupper?  We can help!</h1>
-    <form @submit.prevent="saveForm">
+    <form @submit.prevent="savePuppy">
       <label for="puppy-name"><strong>Name</strong</label>
       <p class="control">
         <input id="puppy-name" class="input" type="text" v-model="formValues.name">

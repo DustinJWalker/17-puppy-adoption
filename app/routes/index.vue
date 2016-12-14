@@ -20,8 +20,8 @@
             <tbody>
             <tr v-if="!puppy.adopted" v-for="puppy in puppies">
               <td>{{ puppy.name }}</td>
-              <td>{{ pupy.age }}</td>
-              <td></td>
+              <td>{{ puppy.age }}</td>
+              <td>
               <router-link class="router-link" :to="{ name: 'detail', params: {id:puppy.id} }">
                 <a href="" class="is-active">Read More</a>
               </router-link>
@@ -33,11 +33,9 @@
     <h1 class="title">Adopted Puppies</h1>
     <table>
       <thead>
-        <tr>
           <th>Name</th>
           <th>Age</th>
           <th></th>
-        </tr>
       </thead>
       <tbody>
         <tr v-if="puppy.adopted" v-for="puppy in puppies">

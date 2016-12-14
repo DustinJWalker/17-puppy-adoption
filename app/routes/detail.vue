@@ -40,7 +40,7 @@
     </div>
   </nav>
 
-  <div class="content">
+  <div class="content has-text-centered">
     <h3>About Me</h3>
     <p>{{ puppy.description }}</p>
   </div>
