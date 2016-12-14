@@ -44,6 +44,7 @@
               <router-view
               :puppies="puppies"
               :api-url="apiUrl"
+              :find-puppy="findPuppy"
               @addPuppy="addPuppy"
               @removePuppy="removePuppy"
               @updatePuppy="updatePuppy">
@@ -61,11 +62,11 @@ import IndexPage from './index.vue'
 const apiUrl =  'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
 export default {
   components: {
-    IndexPage,
+    Index,
   },
   data() {
     return {
-      apiUrl,
+      apiUrl: apiUrl,
       puppies: [],
       path: window.location.pathname,
     };
@@ -92,9 +93,20 @@ export default {
 
       .then((r) => r.json())
       .then((puppies)=> {
-        this.puppies = [puppies,...this.puppies];
+        this.puppies = [puppies,...this.puppies, newPuppy];
         this.$router.push({ name: 'index'});
       });
+    },
+
+    findPuppy(id) {
+      const puppy = this.puppies.find((puppy) => puppy.id === id);
+
+      if  (puppy) {
+        return Promise.resolve(puppy);
+      } else {
+        return fetch(`${this.apiUrl}/${id}`)
+        .then((r) => r.json());
+      }
     },
     removePuppy(puppies) {
       fetch(`${apiUrl}/${puppies.id}`, {
@@ -107,7 +119,7 @@ export default {
         this.$router.push({ name: 'index' });
       });
     },
-    updatePuppy(id, formValues) {
+    updatePuppy(id, updates) {
       fetch(`${apiUrl}/${id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
@@ -115,7 +127,12 @@ export default {
       })
       .then((r) => r.json())
       .then((puppies) => {
-        this.puppies = [puppies,...this.puppies];
+        this.puppies = this.puppies.map((old) => {
+          if(old.id === updatedPuppy.id) {
+            return updatedPuppy;
+          }
+          return old;
+        })
       });
     },
 

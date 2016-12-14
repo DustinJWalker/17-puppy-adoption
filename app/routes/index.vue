@@ -18,11 +18,11 @@
             </tr>
         </thead>
             <tbody>
-            <tr v-if="puppy.adopted" v-for="puppy in puppies">
+            <tr v-if="!puppy.adopted" v-for="puppy in puppies">
               <td>{{ puppy.name }}</td>
               <td>{{ pupy.age }}</td>
               <td></td>
-              <router-link class="router-link" :to="{ name: './detail', params: {id:puppy.id} }">
+              <router-link class="router-link" :to="{ name: 'detail', params: {id:puppy.id} }">
                 <a href="" class="is-active">Read More</a>
               </router-link>
               </td>
@@ -44,7 +44,7 @@
           <td>{{ puppy.name }}</td>
           <td>{{ puppy.age }}</td>
           <td>
-          <router-link class="router-link" to="{ name: 'detail', params: {id:puppy.id }}">
+          <router-link class="router-link" :to="{ name: 'detail', params: {id:puppy.id }}">
             <a href="" class="is-active">Read More</a>
           </router-link>
         </td>

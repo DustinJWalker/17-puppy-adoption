@@ -7,6 +7,7 @@ import App from './routes/application.vue';
 import Index from './routes/index.vue';
 import New from './routes/new.vue';
 import Detail from './routes/detail.vue';
+import Update from './routes/update.vue';
 
 Vue.use(VueRouter);
 
@@ -24,9 +25,15 @@ const routes = [
   },
 
   {
-    path: '/detail/:id',
+    path: '/puppy/:id',
     name: 'detail',
     component: Detail,
+  },
+
+  {
+    path: '/update',
+    name: 'update',
+    component: Update,
   },
 ];
 

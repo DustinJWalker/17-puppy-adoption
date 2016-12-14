@@ -13,7 +13,7 @@
       <label for="puppy-sex"><strong>Sex</strong></label>
       <p class="control">
         <span class="select">
-            <select v-model="formValues.sex">
+            <select v-model="formValues.sex" id="puppy-sex">
               <option value="">Select Dropdown</option>
               <option>Male</option>
               <option>Female</option>
@@ -34,7 +34,7 @@
       </p>
       <label class="puppy-description"><strong>Description</strong></label>
       <p class="control">
-        <textarea v-model="formValues.description" class="textarea" placeholder="Textarea"></textarea>
+        <textarea id="puppy-description" v-model="formValues.description" class="textarea" placeholder="Textarea"></textarea>
       </p>
       <p class="control">
         <router-link :to="{ name: 'index' }" class="button is-primary is-outlined">Cancel</router-link>
